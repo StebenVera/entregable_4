@@ -24,9 +24,7 @@ router.get('/:id', async(req, res) => {
 
 router.post('/', async(req, res) => {
     const { title, price, thumbnail } = req.body;
-    console.log(title);
-    console.log(price);
-    console.log(thumbnail);
+
 
     const resProduct = await product.createProduct(title, price, thumbnail);
     return res.status(200).json({message: resProduct.message, id: resProduct.id});
